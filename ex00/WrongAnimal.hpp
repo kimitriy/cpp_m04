@@ -1,5 +1,5 @@
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 # include <string>
@@ -33,7 +33,7 @@
 # define B_CYAN "\033[7;36m"
 # define B_WHT "\033[7;37m"
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		std::string	m_type;
@@ -46,25 +46,25 @@ class Animal
 
 	public:
 		//default constructor
-		Animal( void );
+		WrongAnimal( void );
 
 		//param constructor
-		Animal( std::string type );
+		WrongAnimal( std::string type );
 
 		//copy constructor
-		Animal( const Animal& oher );
+		WrongAnimal( const WrongAnimal& oher );
 
 		//destructor
-		~Animal( void );
+		~WrongAnimal( void );
 
 		//[=] operator overload
-		Animal& operator= ( const Animal& other );
-		
-		//getter
-		std::string getType( void ) const;
+		WrongAnimal& operator= ( const WrongAnimal& other );
 
-		//m-method
-		virtual void	makeSound( void ) const;
+		//getter
+		std::string	getType( void ) const;
+
+		//m-methods
+		void	makeSound( void ) const;
 };
 
 #endif

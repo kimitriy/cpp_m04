@@ -5,6 +5,9 @@
 
 class Cat : public Animal
 {
+	private:
+		std::string	m_sound;
+
 	public:
 		//default constructor
 		Cat( void );
@@ -17,6 +20,9 @@ class Cat : public Animal
 
 		//[=] operator overload
 		Cat& operator= ( const Cat& other );
+
+		//getter
+		std::string getSound( void ) const;
 
 		//m-methods
 		virtual void	makeSound( void ) const;

@@ -1,72 +1,72 @@
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
 //protected
-void	Animal::msgDefCnstr( std::string className )
+void	WrongAnimal::msgDefCnstr( std::string className )
 {
 	std::cout << F_R_CYAN << "Default constructor started. " << className << " " << F_R_PRPL << m_type << F_R_CYAN << " constructed." << RESET << std::endl;
 }
 
-void	Animal::msgPrmCnstr( std::string className )
+void	WrongAnimal::msgPrmCnstr( std::string className )
 {
 	std::cout << F_R_CYAN << "Parametric constructor started. " << className << " " << F_R_PRPL << m_type << F_R_CYAN << " constructed." << RESET << std::endl;
 }
 
-void	Animal::msgCopyCnstr( std::string className )
+void	WrongAnimal::msgCopyCnstr( std::string className )
 {
 	std::cout << F_R_CYAN << "Copy constructor started. " << className << " " << F_R_PRPL << m_type << F_R_CYAN << " constructed." << RESET << std::endl;
 }
 
-void	Animal::msgDstr( std::string className )
+void	WrongAnimal::msgDstr( std::string className )
 {
 	std::cout << F_R_YLLW << "Destructor started. " << className << " " << F_R_PRPL << m_type << F_R_YLLW << " destructed." << RESET << std::endl;
 }
 
 //public
 //default constructor
-Animal::Animal( void )
+WrongAnimal::WrongAnimal( void )
 	: m_type( "Unknown" )
 {
-	msgDefCnstr( "Animal" );
+	msgDefCnstr( "WrongAnimal" );
 }
 
 //param constructor
-Animal::Animal( std::string type)
+WrongAnimal::WrongAnimal( std::string type )
 	: m_type( type )
 {
-	msgPrmCnstr( "Animal" );
+	msgPrmCnstr( "WrongAnimal" );
 }
 
 //copy constructor
-Animal::Animal( const Animal& other )
+WrongAnimal::WrongAnimal( const WrongAnimal& other )
 {
 	*this = other;
-	msgCopyCnstr( "Animal" );
+	msgCopyCnstr( "WrongAnimal" );
 }
 
 //destructor
-Animal::~Animal( void )
+WrongAnimal::~WrongAnimal( void )
 {
-	msgDstr( "Animal" );
+	msgDstr( "WrongAnimal" );
 }
 
 //[=] operator overload
-Animal& Animal::operator= ( const Animal& other )
+WrongAnimal& WrongAnimal::operator= ( const WrongAnimal& other )
 {
 	if (this == &other)
 		return ( *this );
-	this->m_type = other.getType();
+	this->m_type = other.m_type;
 
 	return ( *this );
 }
 
 //getter
-std::string Animal::getType( void ) const
+std::string	WrongAnimal::getType( void ) const
 {
 	return ( m_type );
 }
 
-//m-method
-void	Animal::makeSound( void ) const
+//m-methods
+void	WrongAnimal::makeSound( void ) const
 {
-	std::cout << F_R_GRN << "Animal " << F_R_PRPL << m_type << F_R_GRN << " makes no sound at all." << RESET << std::endl;
+	std::cout << F_R_GRN << "WrongAnimal " << F_R_PRPL << m_type << F_R_GRN << " makes no sound at all." << RESET << std::endl;
 }
