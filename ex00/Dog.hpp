@@ -16,7 +16,7 @@ class Dog : public Animal
 		Dog( const Dog& other );
 
 		//destructor
-		~Dog( void );
+		virtual ~Dog( void );
 
 		//[=] operator overload
 		Dog& operator= ( const Dog& other );

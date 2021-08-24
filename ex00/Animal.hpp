@@ -55,7 +55,7 @@ class Animal
 		Animal( const Animal& oher );
 
 		//destructor
-		~Animal( void );
+		virtual ~Animal( void );
 
 		//[=] operator overload
 		Animal& operator= ( const Animal& other );

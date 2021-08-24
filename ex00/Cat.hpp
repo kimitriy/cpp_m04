@@ -16,7 +16,7 @@ class Cat : public Animal
 		Cat( const Cat& other );
 
 		//destructor
-		~Cat( void );
+		virtual ~Cat( void );
 
 		//[=] operator overload
 		Cat& operator= ( const Cat& other );

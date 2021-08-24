@@ -16,7 +16,7 @@ class WrongCat : public WrongAnimal
 		WrongCat( const WrongCat& other );
 
 		//destructor
-		~WrongCat( void );
+		virtual ~WrongCat( void );
 
 		//[=] operator overload
 		WrongCat& operator= ( const WrongCat& other );

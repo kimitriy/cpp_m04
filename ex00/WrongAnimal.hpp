@@ -55,7 +55,7 @@ class WrongAnimal
 		WrongAnimal( const WrongAnimal& oher );
 
 		//destructor
-		~WrongAnimal( void );
+		virtual ~WrongAnimal( void );
 
 		//[=] operator overload
 		WrongAnimal& operator= ( const WrongAnimal& other );

@@ -24,5 +24,11 @@ int		main()
 	beta->makeSound();
 	b->makeSound();
 
+	delete meta;
+	delete j;
+	delete i;
+	delete beta;
+	delete b;
+
 	return ( 0 );
 }
