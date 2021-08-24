@@ -10,18 +10,16 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= diamondtrap
+NAME		= animal
 
-HEADER		= 	ClapTrap.hpp \
-				ScavTrap.hpp \
-				FragTrap.hpp \
-				DiamondTrap.hpp \
+HEADER		= 	Animal.hpp \
+				Dog.hpp \
+				Cat.hpp \
 
 SRC 		= 	main.cpp \
-				ClapTrap.cpp \
-				ScavTrap.cpp \
-				FragTrap.cpp \
-				DiamondTrap.cpp \
+				Animal.cpp \
+				Dog.cpp \
+				Cat.cpp \
 
 OBJS		= ${SRC:.cpp=.o}
 
