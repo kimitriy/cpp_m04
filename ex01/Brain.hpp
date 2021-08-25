@@ -4,23 +4,17 @@
 # include <iostream>
 # include <string>
 # include <sstream>
-# include "Cat.hpp"
-# include "Dog.hpp"
+# include "Animal.hpp"
 
 # define N 10
 
 class	Brain
 {
 	private:
-		std::string int2str(int num);
-	
-	protected:
 		std::string	m_ideas[N];
+		std::string m_host;
 
-		void	msgDfltCnstr( std::string className );
-		void	msgPrmCnstr( std::string className );
-		void	msgCopyCnstr( std::string className );
-		void	msgDstr( std::string className );
+		std::string int2str(int num);
 
 	public:
 		//default constructor
@@ -30,10 +24,17 @@ class	Brain
 		Brain( const Brain& other );
 
 		//destructor
-		~Brain( void );
+		virtual ~Brain( void );
 
 		//[=] operator overload
 		Brain& operator= ( const Brain& other );
+
+		//setter
+		void	setIdea( int indx, std::string idea );
+		virtual void	setAllIdeas( std::string idea );
+
+		//getter
+		std::string	getIdea( int indx ) const;
 
 		//m-methods
 		void	printIdeas( void );

@@ -8,7 +8,7 @@ class Dog : public Animal
 {
 	private:
 		std::string	m_sound;
-		Brain 		*m_brain;
+		Brain* 		m_brain;
 
 	public:
 		//default constructor
@@ -23,11 +23,17 @@ class Dog : public Animal
 		//[=] operator overload
 		Dog& operator= ( const Dog& other );
 
+		//setter
+		virtual void	setIdea( int indx, std::string idea );
+		virtual void	setAllIdeas( std::string idea );
+
 		//getter
-		std::string getSound( void ) const;
+		virtual std::string	getSound( void ) const;
+		virtual std::string	getIdea( int indx ) const;
 
 		//m-methods
 		virtual void	makeSound( void ) const;
+		virtual void	printIdeas( void );
 };
 
 #endif

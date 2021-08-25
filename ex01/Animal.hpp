@@ -60,11 +60,17 @@ class Animal
 		//[=] operator overload
 		Animal& operator= ( const Animal& other );
 		
-		//getter
-		std::string getType( void ) const;
+		//setter
+		virtual void	setIdea( int indx, std::string idea );
+		virtual void	setAllIdeas( std::string idea );
 
-		//m-method
+		//getter
+		std::string 		getType( void ) const;
+		virtual std::string	getIdea( int indx ) const;
+
+		//m-methods
 		virtual void	makeSound( void ) const;
+		virtual void	printIdeas( void );
 };
 
 #endif
