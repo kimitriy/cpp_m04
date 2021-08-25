@@ -59,40 +59,8 @@ Animal& Animal::operator= ( const Animal& other )
 	return ( *this );
 }
 
-//setter
-// void	Animal::setIdea( int indx, std::string idea )
-// {
-// 	( void )indx;
-// 	( void )idea;
-// 	std::cout << F_R_GRN << "Animal " << F_R_PRPL << m_type << F_R_GRN << " has not any brain at all." << RESET << std::endl;
-// }
-
-// void	Animal::setAllIdeas( std::string idea )
-// {
-// 	( void )idea;
-// 	std::cout << F_R_GRN << "Animal " << F_R_PRPL << m_type << F_R_GRN << " has not any brain at all." << RESET << std::endl;
-// }
-
 //getter
 std::string Animal::getType( void ) const
 {
 	return ( m_type );
 }
-
-// std::string	Animal::getIdea( int indx ) const
-// {
-// 	( void )indx;
-// 	std::cout << F_R_GRN << "Animal " << F_R_PRPL << m_type << F_R_GRN << " has not any brain at all." << RESET << std::endl;
-// 	return ( NULL );
-// }
-
-//m-method
-// void	Animal::makeSound( void ) const
-// {
-// 	std::cout << F_R_GRN << "Animal " << F_R_PRPL << m_type << F_R_GRN << " makes no sound at all." << RESET << std::endl;
-// }
-
-// void	Animal::printIdeas( void )
-// {
-// 	std::cout << F_R_GRN << "Animal " << F_R_PRPL << m_type << F_R_GRN << " has not any brain at all." << RESET << std::endl;
-// }
