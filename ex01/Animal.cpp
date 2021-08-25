@@ -87,7 +87,7 @@ std::string	Animal::getIdea( int indx ) const
 }
 
 //m-method
-void	Animal::makeSound( void ) const
+void	Animal::makeSound( void )
 {
 	std::cout << F_R_GRN << "Animal " << F_R_PRPL << m_type << F_R_GRN << " makes no sound at all." << RESET << std::endl;
 }

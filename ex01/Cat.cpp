@@ -58,7 +58,7 @@ std::string	Cat::getIdea( int indx ) const
 }
 
 //m-methods
-void	Cat::makeSound( void ) const
+void	Cat::makeSound( void )
 {
 	std::cout << F_R_GRN << "Animal " << F_R_PRPL << getType() << F_R_GRN << " makes " << F_R_PRPL << getSound() << F_R_GRN << " sound." << RESET << std::endl;
 }

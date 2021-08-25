@@ -32,7 +32,7 @@ class Cat : public Animal
 		virtual std::string	getIdea( int indx ) const;
 
 		//m-methods
-		virtual void	makeSound( void ) const;
+		virtual void	makeSound( void );
 		virtual void	printIdeas( void );
 };
 
