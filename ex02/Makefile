@@ -10,34 +10,35 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= diamondtrap
+NAME		= brain
 
-HEADER		= 	ClapTrap.hpp \
-				ScavTrap.hpp \
-				FragTrap.hpp \
-				DiamondTrap.hpp \
+HEADER		= 	Animal.hpp \
+				Dog.hpp \
+				Cat.hpp \
+				Brain.hpp \
 
 SRC 		= 	main.cpp \
-				ClapTrap.cpp \
-				ScavTrap.cpp \
-				FragTrap.cpp \
-				DiamondTrap.cpp \
+				Animal.cpp \
+				Dog.cpp \
+				Cat.cpp \
+				Brain.cpp \
 
 OBJS		= ${SRC:.cpp=.o}
 
-CPP			= clang++
+CXX			= clang++
 
-FLAGS		= -Wall -Wextra -Werror -std=c++98
+CPPFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow -I.
 
 RM			= rm -f
 
+.PHONY: all clean re
+
 all:		${NAME}
 
-.c.o:		
-				${CPP} ${FLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:		${OBJS} ${HEADER}
-				${CPP} ${FLAGS} -o ${NAME} ${OBJS}
+${OBJS}: 		${HEADER}
+${NAME}:		${OBJS}
+				${CXX} ${CPPFLAGS} -o ${NAME} ${OBJS} 
 
 clean:
 		${RM} ${OBJS}
@@ -47,5 +48,3 @@ fclean:	clean
 		${RM} ${LIB}
 
 re:		fclean all
-
-.phony: all clean re
