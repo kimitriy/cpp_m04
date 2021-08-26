@@ -1,39 +1,31 @@
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class Cat : public Animal
+class Ice : public AMateria
 {
 	private:
-		std::string	m_sound;
-		Brain* 		m_brain;
 
 	public:
 		//default constructor
-		Cat( void );
+		Ice( void );
 
 		//copy constructor
-		Cat( const Cat& other );
+		Ice( const Ice& other );
 
 		//destructor
-		virtual ~Cat( void );
+		virtual ~Ice( void );
 
 		//[=] operator overload
-		Cat& operator= ( const Cat& other );
+		Ice& operator= ( const Ice& other );
 
 		//setter
-		virtual void	setIdea( int indx, std::string idea );
-		virtual void	setAllIdeas( std::string idea );
 
 		//getter
-		virtual std::string	getSound( void ) const;
-		virtual std::string	getIdea( int indx ) const;
 
 		//m-methods
-		virtual void	makeSound( void );
-		virtual void	printIdeas( void );
+		virtual AMateria*	clone( void ) const;
 };
 
 #endif

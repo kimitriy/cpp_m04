@@ -1,39 +1,31 @@
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CURE_HPP
+# define CURE_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AMateria.hpp"
 
-class Dog : public AMateria
+class Cure : public AMateria
 {
 	private:
-		std::string	m_sound;
-		Brain* 		m_brain;
 
 	public:
 		//default constructor
-		Dog( void );
+		Cure( void );
 
 		//copy constructor
-		Dog( const Dog& other );
+		Cure( const Cure& other );
 
 		//destructor
-		virtual ~Dog( void );
+		virtual ~Cure( void );
 
 		//[=] operator overload
-		Dog& operator= ( const Dog& other );
+		Cure& operator= ( const Cure& other );
 
 		//setter
-		virtual void	setIdea( int indx, std::string idea );
-		virtual void	setAllIdeas( std::string idea );
 
 		//getter
-		virtual std::string	getSound( void ) const;
-		virtual std::string	getIdea( int indx ) const;
 
 		//m-methods
-		virtual void	makeSound( void );
-		virtual void	printIdeas( void );
+		virtual AMateria*	clone( void ) const;
 };
 
 #endif

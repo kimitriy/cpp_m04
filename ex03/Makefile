@@ -16,12 +16,18 @@ HEADER		= 	AMateria.hpp \
 				Cure.hpp \
 				Ice.hpp \
 				ICharacter.hpp \
+				IMateriaSource.hpp \
+				Character.hpp \
+				MateriaSource.hpp \
 
 SRC 		= 	main.cpp \
 				AMateria.cpp \
 				Cure.cpp \
 				Ice.cpp \
 				ICharacter.cpp \
+				IMateriaSource.cpp \
+				Character.cpp \
+				MateriaSource.cpp \
 
 OBJS		= ${SRC:.cpp=.o}
 

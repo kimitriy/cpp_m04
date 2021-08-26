@@ -5,27 +5,26 @@
 AMateria::AMateria( void )
 	: m_type( "Unknown" )
 {
-	
+
 }
 
 //param constructor
-AMateria::AMateria( std::string type)
+AMateria::AMateria( std::string const & type )
 	: m_type( type )
 {
-	
+
 }
 
 //copy constructor
 AMateria::AMateria( const AMateria& other )
 {
 	*this = other;
-	
 }
 
 //destructor
 AMateria::~AMateria( void )
 {
-	
+
 }
 
 //[=] operator overload
@@ -45,5 +44,7 @@ std::string const & AMateria::getType( void ) const
 }
 
 //m-methods
-// virtual AMateria *clone( void ) const = 0
-// virtual void	use( ICharacter& target )
+void	AMateria::use( ICharacter& target )
+{
+
+}
