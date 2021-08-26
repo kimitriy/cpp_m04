@@ -7,9 +7,9 @@ class ICharacter
 {
 	public:
 		//destructor
-		virtual ~ICharacter() {}
+		virtual ~ICharacter( void );
 		
-		//methods
+		//pure virtual functions
 		virtual std::string const & getName() const = 0;
 		virtual void equip(AMateria* m) = 0;
 		virtual void unequip(int idx) = 0;

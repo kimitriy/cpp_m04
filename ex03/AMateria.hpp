@@ -3,7 +3,7 @@
 
 # include <iostream>
 # include <string>
-# include "ICharacter.hpp"
+// # include "ICharacter.hpp"
 
 # define RESET "\033[0m"
 
@@ -16,7 +16,9 @@
 # define F_R_CYAN "\033[0;36m"
 # define F_R_WHT "\033[0;37m"
 
-class AMateria //Abstract class
+class	ICharacter;
+
+class	AMateria //Abstract class
 {
 	protected:
 		std::string	m_type;
@@ -43,7 +45,7 @@ class AMateria //Abstract class
 		std::string const &	getType( void ) const;
 
 		//m-methods
-		virtual AMateria	*clone( void ) const = 0;
+		virtual AMateria*	clone( void ) const = 0;
 		virtual void		use( ICharacter& target );
 };
 

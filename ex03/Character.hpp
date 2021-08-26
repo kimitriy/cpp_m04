@@ -6,16 +6,34 @@
 class Character : public ICharacter
 {
 	protected:
-		AMateria *inventory[4];
+		std::string	m_name;
+		AMateria*	m_inventory[4];
 
 	public:
+		//default constructor
+		Character( void );
+
+		//param constructor
+		Character( std::string name );
+
+		//copy constructor
+		Character( const Character& other );
+
 		//destructor
-		virtual ~Character() {}
+		virtual	~Character( void );
 		
+		//[=] operator overload
+		Character&	operator= ( const Character& other );
+
+		//setter
+		void	setName( std::string name );
+
+		//getter
+		virtual std::string const &	getName( void ) const;
+
 		//methods
-		virtual std::string const & getName( void ) const;
-		virtual void equip( AMateria* m );
-		virtual void unequip( int idx );
-		virtual void use( int idx, ICharacter& target );
+		virtual void	equip( AMateria* m );
+		virtual void	unequip( int idx );
+		virtual void	use( int idx, ICharacter& target );
 };
 #endif

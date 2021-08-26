@@ -5,9 +5,24 @@
 
 class MateriaSource : public IMateriaSource
 {
+	private:
+		AMateria*	m_materiaArr[4];
+
 	public:
-		virtual ~MateriaSource() {}
-		virtual void learnMateria( AMateria* );
+		//default constructor
+		MateriaSource( void );
+
+		//copy constructor
+		MateriaSource( const MateriaSource& other );
+		
+		//destructor
+		virtual ~MateriaSource( void );
+
+		//[=] operator overload
+		MateriaSource&	operator= ( const MateriaSource& other );
+		
+		//methods
+		virtual void learnMateria( AMateria* materia );
 		virtual AMateria* createMateria( std::string const & type );
 };
 

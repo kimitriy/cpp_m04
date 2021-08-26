@@ -10,14 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= brain
+NAME		= materia
 
 HEADER		= 	AMateria.hpp \
 				Cure.hpp \
 				Ice.hpp \
 				ICharacter.hpp \
-				IMateriaSource.hpp \
 				Character.hpp \
+				IMateriaSource.hpp \
 				MateriaSource.hpp \
 
 SRC 		= 	main.cpp \
@@ -25,15 +25,16 @@ SRC 		= 	main.cpp \
 				Cure.cpp \
 				Ice.cpp \
 				ICharacter.cpp \
-				IMateriaSource.cpp \
 				Character.cpp \
+				IMateriaSource.cpp \
 				MateriaSource.cpp \
 
 OBJS		= ${SRC:.cpp=.o}
 
 CXX			= clang++
 
-CPPFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow -I.
+# CPPFLAGS		= -Wall -Wextra -Werror -std=c++98 -Wshadow -Wno-shadow -I.
+CPPFLAGS		= -W -Wall -Werror
 
 RM			= rm -f
 

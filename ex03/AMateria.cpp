@@ -46,5 +46,5 @@ std::string const & AMateria::getType( void ) const
 //m-methods
 void	AMateria::use( ICharacter& target )
 {
-
+	( void )target;
 }
