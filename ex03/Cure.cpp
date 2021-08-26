@@ -36,5 +36,11 @@ Cure& Cure::operator= ( const Cure& other )
 //m-methods
 AMateria* Cure::clone( void ) const
 {
-	
+	AMateria* obj = new Cure();
+	return ( obj );
+}
+
+void	Cure::use( ICharacter& target )
+{
+	std::cout << "* heals " << NAME << "'s wounds *" << std::endl;
 }

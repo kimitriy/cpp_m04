@@ -36,5 +36,11 @@ Ice& Ice::operator= ( const Ice& other )
 //m-methods
 AMateria* Ice::clone( void ) const
 {
-	
+	AMateria* obj = new Ice();
+	return ( obj );
+}
+
+void	Ice::use( ICharacter& target )
+{
+	std::cout << "* shoots an ice bolt at " << NAME << " *" << std::endl;
 }

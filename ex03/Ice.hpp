@@ -26,6 +26,7 @@ class Ice : public AMateria
 
 		//m-methods
 		virtual AMateria*	clone( void ) const;
+		virtual void		use( ICharacter& target );
 };
 
 #endif
