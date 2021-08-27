@@ -2,21 +2,22 @@
 
 //default constructor
 Ice::Ice( void )
-	: AMateria( "Ice" )
+	: AMateria( "ice" )
 {
-
+	std::cout << F_R_BLU << "Ice default constructor started." << RESET << std::endl;
 }
 
 //copy constructor
 Ice::Ice( const Ice& other )
 {
 	*this = other;
+	std::cout << F_R_BLU << "Ice copy constructor started." << RESET << std::endl;
 }
 
 //destructor
 Ice::~Ice( void )
 {
-
+	std::cout << F_R_BLU << "Ice destructor started." << RESET << std::endl;
 }
 
 //[=] operator overload

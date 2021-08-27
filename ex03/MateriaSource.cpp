@@ -11,6 +11,7 @@ MateriaSource::MateriaSource( void )
 		m_materiaArr[i] = NULL;
 		i++;
 	}
+	std::cout << F_R_PRPL << "MateriaSource default constructor started." << RESET << std::endl;
 }
 
 //copy constructor
@@ -18,12 +19,13 @@ MateriaSource::MateriaSource( const MateriaSource& other )
 	: IMateriaSource()
 {
 	*this = other;
+	std::cout << F_R_PRPL << "MateriaSource copy constructor started." << RESET << std::endl;
 }
 
 //destructor
 MateriaSource::~MateriaSource( void )
 {
-
+	std::cout << F_R_PRPL << "MateriaSource destructor started." << RESET << std::endl;
 }
 
 //[=] operator overload
@@ -50,6 +52,7 @@ void	MateriaSource::learnMateria( AMateria* materia )
 		if (m_materiaArr[i] == NULL)
 		{
 			m_materiaArr[i] = materia;
+			std::cout << F_R_YLLW << m_materiaArr[i]->getType() << " has learned." << RESET << std::endl;
 			break ;
 		}
 		i++;
@@ -58,14 +61,24 @@ void	MateriaSource::learnMateria( AMateria* materia )
 
 AMateria*	MateriaSource::createMateria( std::string const & type )
 {
+	std::string tmp;
+	AMateria* rv;
+	
 	int	i = 0;
 	while (i < 4)
 	{
-		if (m_materiaArr[i] == NULL)
+		if (m_materiaArr[i] != NULL)
+		{
+			tmp = m_materiaArr[i]->getType();
+			if (tmp.compare( type ) == 0)
+			{
+				rv = m_materiaArr[i]->clone();
+				std::cout << F_R_YLLW << rv->getType() << " has cloned." << RESET << std::endl;
+				return ( rv );
+			}
+		}
+		else
 			break ;
-		std::string tmp = m_materiaArr[i]->getType();
-		if (tmp.compare( type ) == 0)
-			return ( m_materiaArr[i]->clone() );
 		i++;
 	}
 	return ( NULL );

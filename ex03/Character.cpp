@@ -11,6 +11,7 @@ Character::Character( void )
 		m_inventory[i] = NULL;
 		i++;
 	}
+	std::cout << F_R_RED << "Character default constructor started." << RESET << std::endl;
 }
 
 //param constructor
@@ -23,6 +24,7 @@ Character::Character( std::string name )
 		m_inventory[i] = NULL;
 		i++;
 	}
+	std::cout << F_R_RED << "Character param constructor started." << RESET << std::endl;
 }
 
 //copy constructor
@@ -30,12 +32,13 @@ Character::Character( const Character& other )
 	: ICharacter()
 {
 	*this = other;
+	std::cout << F_R_RED << "Character copy constructor started." << RESET << std::endl;
 }
 
 //destructor
 Character::~Character( void )
 {
-	// std::cout << F_R_YLLW << "Destructor started. " << F_R_PRPL << "ICharacter" << F_R_YLLW << " is destructed." << RESET << std::endl;
+	std::cout << F_R_RED << "Character destructor started." << RESET << std::endl;
 }
 
 //[=] operator overload
@@ -75,6 +78,7 @@ void	Character::equip( AMateria* m )
 		if (m_inventory[i] == NULL)
 		{
 			m_inventory[i] = m;
+			std::cout << F_R_YLLW << m->getType() << " has equiped." << RESET << std::endl;
 			break ;
 		}
 		i++;
@@ -85,6 +89,7 @@ void	Character::unequip( int idx )
 {
 	if (idx >= 0 && idx < 4 && m_inventory[idx] != NULL)
 	{
+		std::cout << F_R_YLLW << m_inventory[idx]->getType() << " has unequiped." << RESET << std::endl;
 		m_inventory[idx] = NULL;
 	}
 }
@@ -93,6 +98,7 @@ void	Character::use( int idx, ICharacter& target )
 {
 	if (idx >= 0 && idx < 4 && m_inventory[idx] != NULL)
 	{
+		std::cout << F_R_YLLW << "Character " << this->getName() << " uses " << m_inventory[idx]->getType() << " materia." << RESET << std::endl;
 		m_inventory[idx]->use( target );
 	}
 }

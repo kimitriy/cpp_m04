@@ -2,21 +2,22 @@
 
 //default constructor
 Cure::Cure( void )
-	: AMateria( "Cure" )
+	: AMateria( "cure" )
 {
-
+	std::cout << F_R_CYAN << "Cure default constructor started." << RESET << std::endl;
 }
 
 //copy constructor
 Cure::Cure( const Cure& other )
 {
 	*this = other;
+	std::cout << F_R_CYAN << "Cure copy constructor started." << RESET << std::endl;
 }
 
 //destructor
 Cure::~Cure( void )
 {
-
+	std::cout << F_R_CYAN << "Cure destructor started." << RESET << std::endl;
 }
 
 //[=] operator overload
