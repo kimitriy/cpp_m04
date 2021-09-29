@@ -2,7 +2,7 @@
 
 //default constructor
 WrongCat::WrongCat( void )
-	: WrongAnimal( "WrongCat" ), m_sound( "Meow!" )
+	: WrongAnimal( "WrongCat" ), m_sound( "Wrong Meow!" )
 {
 	msgDefCnstr( "WrongCat" );
 }
