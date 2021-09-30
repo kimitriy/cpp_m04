@@ -18,28 +18,36 @@ MateriaSource::MateriaSource( void )
 MateriaSource::MateriaSource( const MateriaSource& other )
 	: IMateriaSource()
 {
-	*this = other;
 	std::cout << F_R_PRPL << "MateriaSource copy constructor started." << RESET << std::endl;
+	*this = other;
 }
 
 //destructor
 MateriaSource::~MateriaSource( void )
 {
 	std::cout << F_R_PRPL << "MateriaSource destructor started." << RESET << std::endl;
+	int	i = 0;
+	while (i < 4)
+	{
+		delete this->m_materiaArr[i];
+		i++;
+	}
+	// delete[] m_materiaArr[4];
 }
 
 //[=] operator overload
 MateriaSource& MateriaSource::operator= ( const MateriaSource& other )
 {
-	if (this == &other)
-		return ( *this );
-	int	i = 0;
-	while (i < 4)
+	if (this != &other)
 	{
-		this->m_materiaArr[i] = other.m_materiaArr[i];
-		i++;
+		int	i = 0;
+		while (i < 4)
+		{
+			delete this->m_materiaArr[i];
+			this->m_materiaArr[i] = other.m_materiaArr[i]->clone();
+			i++;
+		}
 	}
-
 	return ( *this );
 }
 

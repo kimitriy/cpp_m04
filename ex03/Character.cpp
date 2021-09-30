@@ -39,19 +39,27 @@ Character::Character( const Character& other )
 Character::~Character( void )
 {
 	std::cout << F_R_RED << "Character destructor started." << RESET << std::endl;
+	int	i = 0;
+	while (i < 4)
+	{
+		delete this->m_inventory[i];
+		i++;
+	}
 }
 
 //[=] operator overload
 Character& Character::operator= ( const Character& other )
 {
-	if (this == &other)
-		return ( *this );
-	this->m_name = other.getName();
-	int	i = 0;
-	while (i < 4)
+	if (this != &other)
 	{
-		m_inventory[i] = other.m_inventory[i];
-		i++;
+		this->m_name = other.getName();
+		int	i = 0;
+		while (i < 4)
+		{
+			delete this->m_inventory[i];
+			this->m_inventory[i] = other.m_inventory[i]->clone();
+			i++;
+		}
 	}
 	return ( *this );
 }

@@ -6,7 +6,7 @@
 class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria*	m_materiaArr[4];
+		AMateria	*m_materiaArr[4];
 
 	public:
 		//default constructor
