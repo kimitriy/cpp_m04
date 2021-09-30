@@ -41,7 +41,6 @@ Animal::Animal( const Animal& other )
 	: m_type(other.getType())
 {
 	msgCopyCnstr( "Animal" );
-	// *this = other;
 }
 
 //destructor

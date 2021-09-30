@@ -22,7 +22,12 @@ Brain::Brain( const Brain& other )
 	: m_host(other.m_host)
 {
 	std::cout << F_R_CYAN << "Copy constructor started. " << F_R_PRPL << "Brain" << F_R_CYAN << " is constructed." << RESET << std::endl;
-	*this = other;
+	int	i = 0;
+	while (i < N)
+	{
+		this->m_ideas[i] = other.m_ideas[i];
+		i++;
+	}
 }
 
 //destructor
