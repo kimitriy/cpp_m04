@@ -6,7 +6,7 @@
 # include <sstream>
 # include "Animal.hpp"
 
-# define N 10
+# define N 100
 
 class	Brain
 {

@@ -19,9 +19,15 @@ Brain::Brain( std::string className )
 
 //copy constructor
 Brain::Brain( const Brain& other )
+	: m_host(other.m_host)
 {
-	*this = other;
 	std::cout << F_R_CYAN << "Copy constructor started. " << F_R_PRPL << "Brain" << F_R_CYAN << " is constructed." << RESET << std::endl;
+	int	i = 0;
+	while (i < N)
+	{
+		this->m_ideas[i] = other.m_ideas[i];
+		i++;
+	}
 }
 
 //destructor
@@ -33,15 +39,15 @@ Brain::~Brain( void )
 //[=] operator overload
 Brain& Brain::operator= ( const Brain& other )
 {
-	if (this == &other)
-		return ( *this );
-	int	i = 0;
-	while (i < N)
+	if (this != &other)
 	{
-		this->m_ideas[i] = other.m_ideas[i];
-		i++;
+		int	i = 0;
+		while (i < N)
+		{
+			this->m_ideas[i] = other.m_ideas[i];
+			i++;
+		}
 	}
-
 	return ( *this );
 }
 
@@ -49,7 +55,7 @@ Brain& Brain::operator= ( const Brain& other )
 void	Brain::setIdea( int indx, std::string idea )
 {
 	if (indx >= 0 && indx < N)
-		m_ideas[indx] = idea;
+		m_ideas[indx] = m_host + "'s idea is: " + idea;
 	else
 		std::cout << F_R_RED << "Sorry! Such an idea can not be put in this Brain" << RESET << std::endl;
 }
@@ -59,7 +65,7 @@ void	Brain::setAllIdeas( std::string idea )
 	int	i = 0;
 	while (i < N)
 	{
-		m_ideas[i] = m_host + "'s idea is: " + idea + " " + int2str( i + 1 );
+		m_ideas[i] = m_host + "'s idea is: " + idea + " and this is my idea # " + int2str( i + 1 );
 		i++;
 	}
 }
@@ -70,7 +76,7 @@ std::string	Brain::getIdea( int indx ) const
 	if (indx >= 0 && indx < N)
 		return ( m_ideas[indx] );
 	std::cout << F_R_RED << "Sorry! There is no such an idea in this Brain" << RESET << std::endl;
-	return ( NULL );
+	return ( "" );
 }
 
 //m-methods

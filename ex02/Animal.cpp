@@ -38,8 +38,8 @@ Animal::Animal( std::string type)
 
 //copy constructor
 Animal::Animal( const Animal& other )
+	: m_type(other.getType())
 {
-	*this = other;
 	msgCopyCnstr( "Animal" );
 }
 
