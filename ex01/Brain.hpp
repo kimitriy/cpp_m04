@@ -6,7 +6,7 @@
 # include <sstream>
 # include "Animal.hpp"
 
-# define N 10
+# define N 100
 
 class	Brain
 {
@@ -30,7 +30,7 @@ class	Brain
 		Brain& operator= ( const Brain& other );
 
 		//setter
-		void	setIdea( int indx, std::string idea );
+		virtual void	setIdea( int indx, std::string idea );
 		virtual void	setAllIdeas( std::string idea );
 
 		//getter

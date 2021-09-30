@@ -4,34 +4,35 @@
 Dog::Dog( void ) 
 	: Animal( "Dog" ), m_sound( "Woof!" )
 {
-	m_brain = new Brain( "Dog" );
 	msgDefCnstr( "Dog" );
+	m_brain = new Brain( "Dog" );
 }
 
 //copy constructor
 Dog::Dog( const Dog& other )
+	: Animal( other.getType() ), m_sound( other.getSound() )
 {
-	*this = other;
 	msgCopyCnstr( "Dog" );
+	this->m_brain = new Brain( *other.m_brain );
 }
 
 //destructor
 Dog::~Dog( void )
 {
-	delete m_brain;
 	msgDstr( "Dog" );
+	delete m_brain;
 }
 
 //[=] operator overload
 Dog& Dog::operator= ( const Dog& other )
 {
-	if (this == &other)
-		return ( *this );
-	this->m_type = other.m_type;
-	this->m_sound = other.m_sound;
-	delete m_brain;
-	this->m_brain = new Brain( *other.m_brain );
-	// this->m_brain = other.m_brain;
+	if (this != &other)
+	{
+		delete m_brain;
+		this->m_type = other.Animal::getType();
+		this->m_sound = other.getSound();
+		this->m_brain = new Brain( *other.m_brain );
+	}
 	return ( *this );
 }
 

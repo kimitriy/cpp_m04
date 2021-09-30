@@ -38,9 +38,10 @@ Animal::Animal( std::string type)
 
 //copy constructor
 Animal::Animal( const Animal& other )
+	: m_type(other.getType())
 {
-	*this = other;
 	msgCopyCnstr( "Animal" );
+	// *this = other;
 }
 
 //destructor
@@ -52,10 +53,9 @@ Animal::~Animal( void )
 //[=] operator overload
 Animal& Animal::operator= ( const Animal& other )
 {
-	if (this == &other)
-		return ( *this );
-	this->m_type = other.getType();
-
+	if (this != &other)
+		this->m_type = other.getType();
+	
 	return ( *this );
 }
 

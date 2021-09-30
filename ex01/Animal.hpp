@@ -52,7 +52,7 @@ class Animal
 		Animal( std::string type );
 
 		//copy constructor
-		Animal( const Animal& oher );
+		Animal( const Animal& other );
 
 		//destructor
 		virtual ~Animal( void );

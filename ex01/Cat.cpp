@@ -4,34 +4,35 @@
 Cat::Cat( void )
 	: Animal( "Cat" ), m_sound( "Meow!" )
 {
-	m_brain = new Brain( "Cat" );
 	msgDefCnstr( "Cat" );
+	m_brain = new Brain( "Cat" );
 }
 
 //copy constructor
 Cat::Cat( const Cat& other )
+	: Animal( other.getType() ), m_sound( other.getSound() )
 {
-	*this = other;
 	msgCopyCnstr( "Cat" );
+	this->m_brain = new Brain( *other.m_brain );
 }
 
 //destructor
 Cat::~Cat( void )
 {
-	delete m_brain;
 	msgDstr( "Cat" );
+	delete m_brain;
 }
 
 //[=] operator overload
 Cat& Cat::operator= ( const Cat& other )
 {
-	if (this == &other)
-		return ( *this );
-	this->m_type = other.m_type;
-	this->m_sound = other.m_sound;
-	delete m_brain;
-	this->m_brain = new Brain( *other.m_brain );
-	// this->m_brain = other.m_brain;
+	if (this != &other)
+	{
+		delete m_brain;
+		this->m_type = other.Animal::getType();
+		this->m_sound = other.getSound();
+		this->m_brain = new Brain( *other.m_brain );
+	}
 	return ( *this );
 }
 
